@@ -18,7 +18,7 @@ The tool needs some inputs to calculate the cutting positions of the dovetails.
 - the width of the sawblade
 
 And for each dovetail
-- The startposition 
+- The start position 
 - the width at the narrow side of the dovetail
 
 The program will then calculate all necessary cutting positions and draw a visual representation of what the cuts will do. This part is partially implemented. The output of these positions is on the right side of the tool and the numbers can be entered into the individual distribution of cuts of the Box Joint Jig. 
@@ -31,7 +31,7 @@ There are five different cut types to be executed to produce a complete Dovetail
   - After turning the wood and dialing in the zero position another time: A cut on the other side of the dovetail
 - For the Pinboard using the Angle jig
   - A cut with the sawblade at 90° but the workpiece at an angle to cut one side of the pins and remove most material
-  - a cut at the oposite angle of the worpiece to cut the other side of the pins. 
+  - a cut at the opposite angle of the workpiece to cut the other side of the pins. 
   
 Actually the process is lengthy and it is required to work very exact when dialing in the zero-position again and again. But it is possible to cut perfect dovetails at high quality. 
 
