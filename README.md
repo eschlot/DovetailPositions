@@ -7,7 +7,7 @@ https://github.com/eschlot/Box-Joint-Jig-Control
 
 
 ## Installation: 
-At the moment You need to download a recent Eclipse version togeterh with Java JDK 9. Then import this project and comile it. 
+At the moment You need to download a recent Eclipse version together with Java JDK 9. Then import this project and compile it. 
 Once I find the time I will add a compiled version for easier usage. 
 
 ## Usage of the tool:
@@ -17,7 +17,7 @@ The tool needs some inputs to calculate the cutting positions of the dovetails.
 - the width of the wood
 - the width of the sawblade
 
-And for each dovetail
+And for each dovetail:
 - The start position 
 - the width at the narrow side of the dovetail
 
