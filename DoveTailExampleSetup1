@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SchwalbenschwanzPositionen>
+  <woodWidth>150.0</woodWidth>
+  <woodHeight>19.0</woodHeight>
+  <angle>10.0</angle>
+  <sawBladeWidth>2.3</sawBladeWidth>
+  <doveTails>
+    <doveTail>
+      <startPosition>10.0</startPosition>
+      <width>10.0</width>
+    </doveTail>
+    <doveTail>
+      <startPosition>70.0</startPosition>
+      <width>10.0</width>
+    </doveTail>
+    <doveTail>
+      <startPosition>130.0</startPosition>
+      <width>10.0</width>
+    </doveTail>
+  </doveTails>
+</SchwalbenschwanzPositionen>
