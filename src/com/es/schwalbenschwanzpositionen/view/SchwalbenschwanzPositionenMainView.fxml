@@ -23,7 +23,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="550.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.es.schwalbenschwanzpositionen.SchwalbenschwanzPositionenController">
+<VBox prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.es.schwalbenschwanzpositionen.SchwalbenschwanzPositionenController">
   <children>
     <MenuBar prefHeight="25.0" prefWidth="678.0" VBox.vgrow="NEVER">
       <menus>
@@ -99,7 +99,7 @@
                               <VBox>
                                  <children>
                                     <Label text="Resulting Cut positions to program:" />
-                                    <TableView fx:id="cutPositionTable" prefHeight="200.0" prefWidth="420.0" />
+                                    <TableView fx:id="cutPositionTable" prefHeight="200.0" prefWidth="480.0" />
                                  </children>
                               </VBox>
                            </children>
@@ -110,8 +110,8 @@
                <bottom>
                   <VBox BorderPane.alignment="CENTER">
                      <children>
-                        <Canvas fx:id="dovetailViewFront" height="150.0" width="800.0" />
-                        <Canvas fx:id="dovetailViewBack" height="150.0" width="800.0" />
+                        <Canvas fx:id="dovetailViewFront" height="200.0" width="930.0" />
+                        <Canvas fx:id="dovetailViewBack" height="200.0" width="930.0" />
                      </children>
                   </VBox>
                </bottom>
