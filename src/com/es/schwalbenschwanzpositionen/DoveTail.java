@@ -9,7 +9,7 @@ package com.es.schwalbenschwanzpositionen;
 
 import javafx.beans.property.SimpleDoubleProperty;
 
-public class DoveTail {
+public class DoveTail implements Comparable<DoveTail>{
 	public SimpleDoubleProperty startPosition= new SimpleDoubleProperty();
 	public SimpleDoubleProperty width= new SimpleDoubleProperty();
 
@@ -42,6 +42,11 @@ public class DoveTail {
 	public String toString()
 	{
 		return "DoveTail: start:"+getStartPosition()+" width:"+getWidth();
+	}
+
+	@Override
+	public int compareTo(DoveTail arg0) {
+		return Double.compare(this.startPosition.doubleValue(),arg0.startPosition.doubleValue());
 	}
 	
 }
