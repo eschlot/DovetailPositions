@@ -261,6 +261,12 @@ public class SchwalbenschwanzPositionenController
     double offsetInJigDirection = offsetInWoodDirection * Math.cos(radAngle);
     // System.out.println("offsetInJigDirection:" + offsetInJigDirection);
 
+    // Ensure the correct sorting by the start position is done. 
+    getDoveTailPositionTable().getSortOrder().clear();
+    TableColumn<DoveTail, ?> tc = getDoveTailPositionTable().getColumns().get(0);
+    getDoveTailPositionTable().getSortOrder().add(tc);
+    
+    
     double pinBoardStartPos = 0;
     for (DoveTail d : getDoveTailPositionTable().getItems())
     {
@@ -274,7 +280,7 @@ public class SchwalbenschwanzPositionenController
         double woodCutPosEnd = d.getStartPosition() + d.getWidth();
         double effectiveCutPositionEnd = woodCutPosEnd * Math.cos(radAngle) + offsetInJigDirection;
 
-        CutPosition cutPos = new CutPosition(CutType.ZINKENSTUECK_STRAIGHT_LEFT, effectiveCutPositionStart, effectiveCutPositionEnd - effectiveCutPositionStart);
+        CutPosition cutPos = new CutPosition(CutType.PINPIECE_STRAIGHT_LEFT, effectiveCutPositionStart, effectiveCutPositionEnd - effectiveCutPositionStart);
         cutPositionTable.getItems().add(cutPos);
       }
       {
@@ -288,7 +294,7 @@ public class SchwalbenschwanzPositionenController
 
         // System.out.println("cutWidth:" + cutWidth);
 
-        CutPosition cutPos = new CutPosition(CutType.ZINKENSTUECK_STRAIGHT_RIGHT, effectiveCutPositionStart - cutWidth, cutWidth);
+        CutPosition cutPos = new CutPosition(CutType.PINPIECE_STRAIGHT_RIGHT, effectiveCutPositionStart - cutWidth, cutWidth);
         cutPositionTable.getItems().add(cutPos);
       }
       {
@@ -311,7 +317,7 @@ public class SchwalbenschwanzPositionenController
         // System.out.println("effectiveCutStartPosition:" + effectiveCutStartPosition);
         // System.out.println("overallCutWidth:" + overallCutWidth);
 
-        CutPosition cutPos = new CutPosition(CutType.SCHWALBENSTUECK_BEVEL_LEFT, effectiveCutStartPosition, overallCutWidth);
+        CutPosition cutPos = new CutPosition(CutType.DOVETAILPIECE_BEVEL_LEFT, effectiveCutStartPosition, overallCutWidth);
         cutPositionTable.getItems().add(cutPos);
       }
       {
@@ -332,7 +338,7 @@ public class SchwalbenschwanzPositionenController
         // System.out.println("effectiveCutStartPosition:" + effectiveCutStartPosition);
         // System.out.println("overallCutWidth:" + overallCutWidth);
 
-        CutPosition cutPos = new CutPosition(CutType.SCHWALBENSTUECK_BEVEL_RIGHT, effectiveCutStartPosition, overallCutWidth);
+        CutPosition cutPos = new CutPosition(CutType.DOVETAILPIECE_BEVEL_RIGHT, effectiveCutStartPosition, overallCutWidth);
         cutPositionTable.getItems().add(cutPos);
       }
       {
@@ -342,7 +348,7 @@ public class SchwalbenschwanzPositionenController
 
         double bevelWidthAtTopOfCut = Math.tan(radAngle) * woodHeightValue.get();
         double effectiveCutPositionEnd = woodCutPosStart - bevelWidthAtTopOfCut;
-        CutPosition cutPos = new CutPosition(CutType.SCHWALBENSTUECK_STRAIGHT, pinBoardStartPos, effectiveCutPositionEnd - pinBoardStartPos);
+        CutPosition cutPos = new CutPosition(CutType.DOVETAILPIECE_STRAIGHT, pinBoardStartPos, effectiveCutPositionEnd - pinBoardStartPos);
         cutPositionTable.getItems().add(cutPos);
 
         pinBoardStartPos = woodCutPosStart + d.getWidth() + bevelWidthAtTopOfCut;
@@ -352,7 +358,7 @@ public class SchwalbenschwanzPositionenController
     }
     {
       double effectiveCutPositionEnd = woodWidthValue.get();
-      CutPosition cutPos = new CutPosition(CutType.SCHWALBENSTUECK_STRAIGHT, pinBoardStartPos, effectiveCutPositionEnd - pinBoardStartPos);
+      CutPosition cutPos = new CutPosition(CutType.DOVETAILPIECE_STRAIGHT, pinBoardStartPos, effectiveCutPositionEnd - pinBoardStartPos);
       cutPositionTable.getItems().add(cutPos);
     }
 
@@ -385,7 +391,7 @@ public class SchwalbenschwanzPositionenController
 
     gc.setTextAlign(TextAlignment.CENTER);
 
-    gc.strokeText("First side: Blue is " + CutPosition.CutType.SCHWALBENSTUECK_BEVEL_LEFT + "; Dark orange is " + CutType.SCHWALBENSTUECK_STRAIGHT, width / 2, 0);
+    gc.strokeText("First side: Blue is \"" + CutPosition.CutType.DOVETAILPIECE_BEVEL_LEFT + "\"; Dark orange is \"" + CutType.DOVETAILPIECE_STRAIGHT+"\"", width / 2, 0);
 
     gc.setTextAlign(TextAlignment.RIGHT);
     gc.strokeText(Double.toString(woodWidthValue.get()), width - 10, 0);
@@ -420,7 +426,7 @@ public class SchwalbenschwanzPositionenController
 
     for (CutPosition cut : cutPositionTable.getItems())
     {
-      if (cut.getCutType() == CutType.SCHWALBENSTUECK_STRAIGHT)
+      if (cut.getCutType() == CutType.DOVETAILPIECE_STRAIGHT)
       {
         gc.setLineWidth(0);
         gc.setStroke(Color.DARKORANGE);
@@ -430,7 +436,7 @@ public class SchwalbenschwanzPositionenController
     }
     for (CutPosition cut : cutPositionTable.getItems())
     {
-      if (cut.getCutType() == CutType.SCHWALBENSTUECK_BEVEL_LEFT)
+      if (cut.getCutType() == CutType.DOVETAILPIECE_BEVEL_LEFT)
       {
         double corneradditionLength = woodHeightValue.get() * Math.tan(radAngle);
         gc.setLineWidth(0);
@@ -471,7 +477,7 @@ public class SchwalbenschwanzPositionenController
 
     gc.setTextAlign(TextAlignment.CENTER);
 
-    gc.strokeText("Turn around: Blue is " + CutPosition.CutType.SCHWALBENSTUECK_BEVEL_RIGHT, width / 2, 0);
+    gc.strokeText("Turn around: Blue is " + CutPosition.CutType.DOVETAILPIECE_BEVEL_RIGHT, width / 2, 0);
 
     gc.setTextAlign(TextAlignment.RIGHT);
     gc.strokeText(Double.toString(woodWidthValue.get()), width - 10, 0);
@@ -517,7 +523,7 @@ public class SchwalbenschwanzPositionenController
 
     for (CutPosition cut : cutPositionTable.getItems())
     {
-      if (cut.getCutType() == CutType.SCHWALBENSTUECK_BEVEL_RIGHT)
+      if (cut.getCutType() == CutType.DOVETAILPIECE_BEVEL_RIGHT)
       {
         double corneradditionLength = woodHeightValue.get() * Math.tan(radAngle);
         gc.setLineWidth(0);
