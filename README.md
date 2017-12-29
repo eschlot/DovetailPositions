@@ -35,8 +35,4 @@ There are five different cut types to be executed to produce a complete Dovetail
   
 Actually the process is lengthy and it is required to work very exact when dialing in the zero-position again and again. But it is possible to cut perfect dovetails at high quality. 
 
-## Using the tool:
-
-The tool is written with JavaFX and the textfields and the tables to add the dovetail positions require always to press "Enter" after a number is changed. This is a bit unpleasant for the moment and I do not expect too many people to use the tool in the end. But maybe somebody likes to contribute to improve this behavior. 
-
   
