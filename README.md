@@ -11,6 +11,11 @@ At the moment You need to download a recent Eclipse version together with Java J
 Once I find the time I will add a compiled version for easier usage. 
 
 ## Usage of the tool:
+To start the program You need the java jre Version 9 from oracle. This is for free. 
+Once You have installed this it should be simple to "clone" the repository, unzip it to any directory and double click the "DovetailPositions.jar" file in the main directory.  
+
+To develop on the tool You need the java 9 jdk. This can also be used to execute the tool.  
+
 The tool needs some inputs to calculate the cutting positions of the dovetails. 
 - The angle of the dovetails
 - the thickness (height) of the wood
@@ -30,7 +35,7 @@ There are five different cut types to be executed to produce a complete Dovetail
   - After dialing in the zero position for a tilted blade: A cut on one side of the dovetail.
   - After turning the wood and dialing in the zero position another time: A cut on the other side of the dovetail
 - For the Pinboard using the Angle jig
-  - A cut with the sawblade at 90Â° but the workpiece at an angle to cut one side of the pins and remove most material
+  - A cut with the sawblade at 90° but the workpiece at an angle to cut one side of the pins and remove most material
   - a cut at the opposite angle of the workpiece to cut the other side of the pins. 
   
 Actually the process is lengthy and it is required to work very exact when dialing in the zero-position again and again. But it is possible to cut perfect dovetails at high quality. 
