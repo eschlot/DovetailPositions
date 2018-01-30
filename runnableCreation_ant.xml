@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Schwalbenschwanzpositionen with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="C:/Users/eckar/eclipse-workspace_java"/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/DovetailPositions.jar">
+            <manifest>
+                <attribute name="Main-Class" value="com.es.schwalbenschwanzpositionen.Main"/>
+                <attribute name="Class-Path" value=". DovetailPositions_lib/org.eclipse.fx.ide.css.jfx8_3.0.0.201705220750.jar"/>
+            </manifest>
+            <fileset dir="${dir.jarfile}/bin"/>
+        </jar>
+        <delete dir="${dir.jarfile}/DovetailPositions_lib"/>
+        <mkdir dir="${dir.jarfile}/DovetailPositions_lib"/>
+        <copy file="C:/data/Downloads/java/eclipse-java-oxygen-1a-win32-x86_64/eclipse/plugins/org.eclipse.fx.ide.css.jfx8_3.0.0.201705220750.jar" todir="${dir.jarfile}/DovetailPositions_lib"/>
+    </target>
+</project>
